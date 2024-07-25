@@ -1,0 +1,32 @@
+COMANDOS PARA CREAR PROYECTO CON FASTAPI
+
+#PASO 1 VERSION DE PYTHON 
+python --version
+
+#PASO 2 crear el entorno virtual. 
+python -m venv venv
+
+#PASO 3 Activar entorno virtual
+.\venv\Scripts\Activate
+
+#PASO 4 instalar fastApi y uvircorn 
+pip install fastapi uvicorn 
+
+
+#PASO 5 para que lo reconozca con un entorno virtual ctrl+p
+Python interpreter
+Python:Select interpreter
+Python 3.12.4('venv':'venv')
+
+
+#PASO 6 iniciar servidor 
+uvicorn main:app
+
+#PARA QUE ACTUALICE LOS CAMBIOS "RECARGA AUTOMATICA 
+
+uvicorn main:app --reload 
+
+#LIBRERIAS PARA EL BACK:
+Python healt check libreria
+libreria para logs 
+DE COMPLEJIDAD CICLOMATICA 
