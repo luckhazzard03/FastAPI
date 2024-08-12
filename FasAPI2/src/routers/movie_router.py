@@ -1,5 +1,5 @@
 #parametro de rutas endpoints
-from typing import List
+from typing import List, Union
 from fastapi import Path, Query, APIRouter
 from fastapi.responses import JSONResponse
 from src.models.movie_model import Movie, MovieCreate, MovieUpdate
@@ -27,12 +27,13 @@ def get_movie(id: int = Path(gt=0)) -> Movie | dict: #se retorna una pelicula
 
 
 #parametro de rutas
-@movie_router.get ('/category', tags=['Movies'])
-def get_movie_by_category(category : str = Query(min_length=4, max_length=20)) -> Movie | dict: #retornamos unicamente una pelicula
-    for movie in movies:
-        if movie.category == category:
-            return JSONResponse(movie.model_dump(), status_code=200)
-    return JSONResponse(content={}, status_code=404)# codigo de respuesta 2No encontrado"
+@movie_router.get('/movies/category', tags=['Movies'])
+def get_movie_by_category(category: str = Query(min_length=3, max_length=20)) -> Union[List[Movie], dict]:
+    # Aquí se asume que tienes una lista de películas y un método para filtrarlas por categoría
+    filtered_movies = [movie for movie in movies if movie.category == category]
+    if filtered_movies:
+        return filtered_movies
+    return {"message": "No movies found"}, 404# codigo de respuesta 2No encontrado"
 
 
 # metodo crear Endpoints

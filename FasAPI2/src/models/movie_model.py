@@ -16,7 +16,7 @@ class MovieCreate(BaseModel):
     overview: str = Field(min_length=15, max_length=50)#Validacion de caracteres minimo maximo
     year: int = Field(le=datetime.date.today().year, ge=1900)#validación de fecha minimo de año 1900
     rating: float = Field(ge=0, le =10)# minimo maximo
-    category: str = Field(min_length=5, max_length=20)# #Validación de caracteres 
+    category: str = Field(min_length=3, max_length=20)# #Validación de caracteres 
     
     
     model_config = {

@@ -9,6 +9,8 @@ import os
 
 app = FastAPI()
 
+
+
 app.title = "FastAPI2"
 app.version = "2.0.0"
 
@@ -25,7 +27,7 @@ templates = Jinja2Templates(directory=templates_path)
 
 @app.get ('/', tags=['Home'])
 def home(request: Request):
-    return templates.TemplateResponse('index.html', { 'request':request,'message': 'Welcome'})
+    return templates.TemplateResponse('index.html', { 'request':request,'message': 'Hola Mundo'})
 
 #DEPENDENCIAS
 def common_params(start_date: str, end_date: str):

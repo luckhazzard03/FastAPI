@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  fastapi:
+    build: .
+    image: image-fastapi
+    container_name: fastapi-application
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+
+    
