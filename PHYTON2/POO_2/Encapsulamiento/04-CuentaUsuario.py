@@ -18,22 +18,23 @@
 
 #Definimos la clase `CuentaUsuario`
 class CuentaUsuario:
-    
+    # Constructor de la clase
     def __init__(self, usuario, password):
-        
+         # Inicializa los atributos privados __usuario y __password
         self.__usuario = usuario
         self.__password = password
-    
+    #Método para cambiar la contraseña
     def cambiar_password(self, password):
         if len(password) >=8:
             self.__password =password
         else:
             print("La contraseña debe tener al menos 8 caracteres.")
-            
+    #Método para verificar usuario        
     def verificar_usuario(self, usuario):
+         # Retorna una cadena de texto formateada con los valores actuales de los atributos
         return self.__usuario == usuario 
     
-    
+    # Método especial para obtener una representación en cadena del objeto
     def __str__(self):
         return(f"Ususario: {self.__usuario} Contraseña: {self.__password}")
  
