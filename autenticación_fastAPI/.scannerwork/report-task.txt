@@ -1,0 +1,6 @@
+projectKey=fastAPI2
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=fastAPI2
+ceTaskId=32e368cc-a61b-4262-a74b-56f806582d37
+ceTaskUrl=http://localhost:9000/api/ce/task?id=32e368cc-a61b-4262-a74b-56f806582d37
